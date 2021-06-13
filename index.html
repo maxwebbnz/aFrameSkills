@@ -2,16 +2,27 @@
 
 <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="js/camera.js"></script>
 </head>
 
 <body>
     <a-scene>
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        <a-sky color="#ECECEC"></a-sky>
+        <!-- Assests -->
+        <a-entity camera="" position="0 1.02 4.80954" wasd-controls="" rotation="-4.469070802020418 0 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" daydream-controls="hand: right" gearvr-controls="hand: right" magicleap-controls="hand: right"
+            oculus-go-controls="hand: right" oculus-touch-controls="hand: right" valve-index-controls="hand: right" vive-controls="hand: right" vive-focus-controls="hand: right" windows-motion-controls="" generic-tracked-controller-controls="hand: right"
+            laser-controls="" rotation-reader></a-entity>
+        <a-assets>
+            <img id="sky" src="https://st4.depositphotos.com/1000633/21871/i/600/depositphotos_218714768-stock-photo-blue-sky-panorama-clouds-summer.jpg"></img>
+        </a-assets>
+        <a-sky src="#sky"></a-sky>
+        <a-entity id="room">
+            <a-plane material="" geometry="" rotation="-90 0 0" scale="10 10 1" id="floor"></a-plane>
+            <a-plane wallbounds material="" geometry="" rotation="0 90 0" scale="10 10 1" id="leftwall" position="-4.673 0.735 0"></a-plane>
+            <a-plane wallbounds material="" geometry="" rotation="" scale="10 10.28 1" id="centerwall" position="0 0.73469 -5.33347"></a-plane>
+            <a-plane wallbounds material="" geometry="" rotation="0 -90 0" scale="10 10.37 1" id="rightwall" position="4.99656 0.754 -0.59173"></a-plane>
+        </a-entity>
     </a-scene>
 </body>
+
 
 </html>
