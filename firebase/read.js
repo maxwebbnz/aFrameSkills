@@ -3,10 +3,16 @@
  * All rights reserved.
  */
 
-// Base Variable Definitions
+//* Base Variable Definitions
 let artWorks = [];
 let id = 'id'
 
+/**========================================================================
+ **                           fb.read
+ *?  firebase read function that should be generalised
+
+ *@return n/a
+ *========================================================================**/
 fb.read = function() {
     var galDBRoot = firebase.database().ref('gallery/');
     galDBRoot.on('value', (snapshot) => {
