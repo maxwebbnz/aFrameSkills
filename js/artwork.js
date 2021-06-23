@@ -6,6 +6,11 @@
 //* Setting up Enviroment
 //! Taken from https://aframe.io/docs/1.2.0/introduction/javascript-events-dom-apis.html#removing-a-component-with-removeattribute
 var sceneEl = document.querySelector('a-scene');
+$(document).ready(function() {
+    fb.read()
+});
+
+let artWorkPositions = [-3.621, -2.136, -0.669, 0.988, 3.425]
 
 let artWork = {
     /**========================================================================
@@ -17,9 +22,9 @@ let artWork = {
         console.log('hello')
         let min = -3.733
         let max = 3.864
-        let randomXPos = Math.random() * (max - min) + min;
+        let randomXPos = artWorkPositions[Math.floor(Math.random() * artWorkPositions.length * 1)];
         // console.log(artWorks[i].id.authorOfArt)
-        sceneEl = document.querySelector('a-scene');
+        sceneEl = document.getElementById('paintings');
         var planeId = document.createElement('a-plane');
         planeId.setAttribute('src', artObjec.url);
         planeId.setAttribute('id', artObjec.id);
@@ -28,8 +33,8 @@ let artWork = {
         // Add in Artwork Info Plane
         var artWorkInfo = document.createElement('a-plane');
         artWorkInfo.setAttribute('id', artObjec.id + '-infoPlane');
-        artWorkInfo.setAttribute('position', randomXPos + ' 0.683 -4.4265')
-        artWorkInfo.setAttribute('scale', '1.56 0.35 1')
+        artWorkInfo.setAttribute('position', randomXPos + ' 0.613 -4.4265')
+        artWorkInfo.setAttribute('scale', '1.56 0.49 1')
         artWorkInfo.setAttribute('material', 'color:  #987676')
         sceneEl.appendChild(artWorkInfo);
         // Add in Artwork Info Plane - Art Work nameOfArt
@@ -39,6 +44,13 @@ let artWork = {
         artWorkInfoArtName.setAttribute('scale', '0.610 0.610 1')
         artWorkInfoArtName.setAttribute('text', 'anchor:  align;  align: center; width:  5;  value:' + artObjec.nameOfArt)
         sceneEl.appendChild(artWorkInfoArtName);
+        // Add in Artwork Info Plane - Art Work authorOfArt
+        var artWorkInfoAuthorName = document.createElement('a-text');
+        artWorkInfoAuthorName.setAttribute('id', artObjec.id + '-infoPlane(author)');
+        artWorkInfoAuthorName.setAttribute('position', randomXPos + ' 0.53766 -4.4265')
+        artWorkInfoAuthorName.setAttribute('scale', '0.63 0.610 1')
+        artWorkInfoAuthorName.setAttribute('text', 'anchor:  align;  align: center; width:  5;  value: Created by ' + artObjec.authorOfArt)
+        sceneEl.appendChild(artWorkInfoAuthorName);
 
     }
 }
