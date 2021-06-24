@@ -35,14 +35,11 @@
             <img id="walls" src="assests/mat/woodDirtPlanks.jpg" crossorigin="anonymous">
             <img id="floorTiles" src="assests/mat/floorTiles.jpg" crossorigin="anonymous">
         </a-assets>
-        <!-- Camera -->
-        <a-entity camera="" position="0 1.02 4.80954" wasd-controls="acceleration: 20" rotation="-4.469070802020418 0 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" daydream-controls="hand: right" gearvr-controls="hand: right"
-            magicleap-controls="hand: right" oculus-go-controls="hand: right" oculus-touch-controls="hand: right" valve-index-controls="hand: right" vive-controls="hand: right" vive-focus-controls="hand: right" windows-motion-controls="" generic-tracked-controller-controls="hand: right"
-            laser-controls="" rotation-reader>
-        </a-entity>
+
         <!-- Camera + cursor. -->
         <a-entity id="cameraRig" position="0 1.02 4.80954">
-            <a-camera look-controls wasd-controls position="0 0 0">
+            <a-camera look-controls wasd-controls position="0 0 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" daydream-controls="hand: right" gearvr-controls="hand: right" magicleap-controls="hand: right" oculus-go-controls="hand: right"
+                oculus-touch-controls="hand: right" valve-index-controls="hand: right" vive-controls="hand: right" vive-focus-controls="hand: right" windows-motion-controls="" generic-tracked-controller-controls="hand: right" laser-controls="" rotation-reader>
                 <a-gui-cursor id="cursor" raycaster="objects: [gui-interactable]" fuse="true" fuse-timeout="2000" color="#ECEFF1" hover-color="#CFD8DC" active-color="#607D8B" design="ring">
                     <!-- dot, ring, reticle, cross  -->
                 </a-gui-cursor>
